@@ -1,6 +1,6 @@
 import StoryPage from '../components/StoryPage';
 
-export default function Page4() {
+export default function Page1() {
   return (
     <StoryPage
       title=""
@@ -10,8 +10,8 @@ export default function Page4() {
 עוֹרֵךְ דִּין אַבָּא פִּיל, אֶת הָרָעִים מַפְלִיל.
 אִימָּא פִילָה שָׁרָה בַּמַּקְהֵלָה.
 הַפִילָה הַבְּכוֹרָה, בְּרִיקּוּד בָּחֲרָה.
-הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי.
-`}
+הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי.`}
+      nextPage="/page2"
     />
   );
 }
