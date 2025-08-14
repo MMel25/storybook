@@ -1,6 +1,6 @@
 import StoryPage from '../components/StoryPage';
 
-export default function Page4() {
+export default function Page2() {
   return (
     <StoryPage
       title=""
@@ -11,8 +11,8 @@ export default function Page4() {
 "אִימָּא, אַבָּא!, מָה אֶעֱשֶׂה כְּשֶׁאֶהְיֶה גָּדוֹל?"
 חִיְּיכוּ הַהוֹרִים וְאָמְרוּ: 
 "כְּשֶׁתִּהְיֶה גָּדוֹל, תַּעֲשֶׂה כֹּל מָה שֶׁאַתָּה יָכוֹל, אֲבָל עַד אָז,
-פָּשׁוּט תֵּהָנֶה לִגְדּוֹל"
-`}
+פָּשׁוּט תֵּהָנֶה לִגְדּוֹל"`}
+      nextPage="/page3"
     />
   );
 }
