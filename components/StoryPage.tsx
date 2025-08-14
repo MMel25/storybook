@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../styles/globals.css'; // אם אתה משתמש ב-CSS רגיל
+import Link from 'next/link';
 
 interface StoryPageProps {
   title: string;
@@ -18,6 +18,10 @@ export default function StoryPage({ title, text, image }: StoryPageProps) {
         height={600}
       />
       <p className="story-text">{text}</p>
+
+      <nav>
+        <Link href="/">חזרה לתפריט הראשי</Link>
+      </nav>
     </div>
   );
 }
