@@ -7,6 +7,10 @@
   font-family: 'Segoe UI', sans-serif;
   background-color: #fdf6e3;
   color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .page h1 {
@@ -18,6 +22,7 @@
 nav a {
   display: inline-block;
   margin-top: 1rem;
+  margin-right: 0.5rem;
   padding: 0.6rem 1.2rem;
   background-color: #3498db;
   color: white;
@@ -51,7 +56,14 @@ nav a:hover {
 .story-text {
   font-size: 1.4rem;
   line-height: 2.2rem;
-  text-align: justify;
+  text-align: right;
+  direction: rtl;
+}
+
+.story-nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* רספונסיביות למובייל */
@@ -66,7 +78,7 @@ nav a:hover {
 
   nav a {
     font-size: 1rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
   }
 
   .story-page {
@@ -80,5 +92,11 @@ nav a:hover {
   .story-text {
     font-size: 1.2rem;
     line-height: 1.8rem;
+  }
+
+  .story-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
   }
 }
