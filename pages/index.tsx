@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import '../styles/globals.css'; // ייבוא נכון של קובץ CSS רגיל
 
 export default function Home() {
   return (
