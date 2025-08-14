@@ -1,6 +1,6 @@
 import StoryPage from '../components/StoryPage';
 
-export default function Page4() {
+export default function Page3() {
   return (
     <StoryPage
       title=""
@@ -11,8 +11,8 @@ export default function Page4() {
 עַל כְּלִי נְגִינָה?!"
 מִיָּד אֶל הוֹרָיו, נִיגַּשׁ בְּרִינָּה: 
 "אִימָּא!, אַבָּא!, נַחֲשׁוּ מָה הִשְׁתַּנָּה?!,
-הֶחְלַטְתִּי לִלְמוֹד לְנַגֵּן עַל כְּלִי נְגִינָה!
-`}
+הֶחְלַטְתִּי לִלְמוֹד לְנַגֵּן עַל כְּלִי נְגִינָה!"`}
+      nextPage="/page4"
     />
   );
 }
