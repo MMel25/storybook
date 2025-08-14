@@ -1,6 +1,6 @@
 import StoryPage from '../components/StoryPage';
 
-export default function Page4() {
+export default function Page8() {
   return (
     <StoryPage
       title=""
@@ -13,8 +13,7 @@ export default function Page4() {
 מֵאֵיזֶה כְּלִי לְנַגֵּן הִתְחִיל...
 
 כְּשֶׁרָאוּ אַבָּא פִּיל וְאִימָה פִּילָה, שֶׁבְּנָם צוֹהֵל בְּשִׂמְחָה וּבְרוֹן,
-הֵבִינוּ מִיָּד, שֶׁסּוֹף סוֹף מָצָא, אֶת הַכִּישָּׁרוֹן...
-`}
+הֵבִינוּ מִיָּד, שֶׁסּוֹף סוֹף מָצָא, אֶת הַכִּישָּׁרוֹן...`}
     />
   );
 }
