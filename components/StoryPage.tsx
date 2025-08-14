@@ -1,27 +1,32 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import stories from '../data/stories.json';
 
-interface StoryPageProps {
-  title: string;
-  text: string;
-  image: string;
-}
+export default function StoryPage() {
+  const router = useRouter();
+  const { id } = router.query;
 
-export default function StoryPage({ title, text, image }: StoryPageProps) {
+  const story = stories.find((s) => s.id === id);
+
+  if (!story) {
+    return <div className="story-page">הסיפור לא נמצא</div>;
+  }
+
+  const { title, image, text } = story;
+
   return (
     <div className="story-page">
-      <h1>{title}</h1>
-      <Image
-        src={image}
-        alt={title}
-        width={800}
-        height={600}
-      />
+      <h1 className="story-title">{title}</h1>
+      <div className="story-image">
+        <Image
+          src={image}
+          alt={title}
+          layout="responsive"
+          width={800}
+          height={600}
+        />
+      </div>
       <p className="story-text">{text}</p>
-
-      <nav>
-        <Link href="/">חזרה לתפריט הראשי</Link>
-      </nav>
     </div>
   );
 }
