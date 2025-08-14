@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 export default function Home() {
-  const subtitle = "מאת: מאור מלמד"; // תעדכן כרצונך
+  const subtitle = "מאת: מאור מלמד. איורים: בינה מלאכותית"; // תעדכן כרצונך
 
   return (
     <div className="page">
