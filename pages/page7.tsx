@@ -1,6 +1,6 @@
 import StoryPage from '../components/StoryPage';
 
-export default function Page4() {
+export default function Page7() {
   return (
     <StoryPage
       title=""
@@ -12,8 +12,8 @@ export default function Page4() {
 תּוּפִּים".
 אַךְ כַּמָּה מַפְתִּיעַ, שֶׁמּוּל הוֹרָיו שׁוּב הוֹפִיעַ, וַאֲשֶׁר עַל לִיבּוֹ הוֹדִיעַ: 
 "לְתוֹפֵף עַל תּוּפִּים זֶה מְאוֹד מְשַׁחְרֵר, אֲבָל בָּא לִי לִלְמוֹד לְנַגֵּן,
-עַל כְּלִי אַחֵר!
-`}
+עַל כְּלִי אַחֵר!"`}
+      nextPage="/page8"
     />
   );
 }
