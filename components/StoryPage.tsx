@@ -1,32 +1,27 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import stories from '../data/stories.json';
+import Link from 'next/link';
 
-export default function StoryPage() {
-  const router = useRouter();
-  const { id } = router.query;
+interface StoryPageProps {
+  title?: string;
+  text: string;
+  image: string;
+}
 
-  const story = stories.find((s) => s.id === id);
-
-  if (!story) {
-    return <div className="story-page">הסיפור לא נמצא</div>;
-  }
-
-  const { title, image, text } = story;
-
+export default function StoryPage({ title, text, image }: StoryPageProps) {
   return (
     <div className="story-page">
-      <h1 className="story-title">{title}</h1>
-      <div className="story-image">
-        <Image
-          src={image}
-          alt={title}
-          layout="responsive"
-          width={800}
-          height={600}
-        />
-      </div>
+      {title && <h1 className="story-title">{title}</h1>}
+      <Image
+        src={image}
+        alt={title || "תמונה"}
+        layout="responsive"
+        width={800}
+        height={600}
+      />
       <p className="story-text">{text}</p>
+      <nav>
+        <Link href="/">חזרה לעמוד הראשי</Link>
+      </nav>
     </div>
   );
 }
