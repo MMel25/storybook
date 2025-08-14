@@ -5,9 +5,10 @@ interface StoryPageProps {
   title?: string;
   text: string;
   image: string;
+  nextPage?: string;
 }
 
-export default function StoryPage({ title, text, image }: StoryPageProps) {
+export default function StoryPage({ title, text, image, nextPage }: StoryPageProps) {
   return (
     <div className="story-page">
       {title && <h1 className="story-title">{title}</h1>}
@@ -19,8 +20,11 @@ export default function StoryPage({ title, text, image }: StoryPageProps) {
         height={600}
       />
       <p className="story-text">{text}</p>
-      <nav>
+      <nav className="story-nav">
         <Link href="/">חזרה לעמוד הראשי</Link>
+        {nextPage && (
+          <Link href={nextPage}>לעמוד הבא</Link>
+        )}
       </nav>
     </div>
   );
