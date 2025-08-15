@@ -11,7 +11,11 @@ export default function Home() {
         <strong>אִיּוּרִים:</strong> בִּינָה קַלְמֶנְדִית
       </p>
 
-      <Link href="/page1" className="mediaLink" aria-label="התחל לקרוא דרך התמונה">
+      <Link
+        href="/page1"
+        className="mediaLink"
+        aria-label="התחל לקרוא דרך התמונה"
+      >
         <div className="media">
           <Image
             src="/images/cover.png"
@@ -24,38 +28,43 @@ export default function Home() {
       </Link>
 
       <nav className="cta-group">
-        {/* כפתור שיר קליפ מימין */}
+        {/* כפתור שיר קליפ מימין – לוגו YouTube */}
         <a
           href="https://youtu.be/-i0xPcRIUJU?si=fEbyzE-cF2CQIs2C"
           target="_blank"
           rel="noopener noreferrer"
           className="cta clip"
         >
-          {/* לוגו יוטיוב אמיתי */}
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
             viewBox="0 0 24 24"
             width="20"
             height="20"
-            fill="white"
+            fill="currentColor"
           >
-            <path d="M10 15.5l6-3.5-6-3.5v7z"/>
-            <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 5 12 5 12 5s-4.2 0-6.9.1c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.8.1 7.6.1 7.6.1s4.2 0 6.9-.1c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2z"/>
+            <path d="M10 9 L10 15 L15 12 Z" />
           </svg>
           <span>שִׁיר קְלִיפּ</span>
         </a>
 
-        {/* כפתור התחלת קריאה משמאל */}
+        {/* כפתור התחל לקרוא משמאל – ספר פתוח */}
         <Link href="/page1" className="cta read">
-          {/* אייקון ספר */}
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
             viewBox="0 0 24 24"
             width="20"
             height="20"
-            fill="#4a2c00"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path d="M19 2H10a1 1 0 0 0-1 1v15a4 4 0 0 1 0 8h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM8 4H5a1 1 0 0 0-1 1v15a4 4 0 0 1 0 8h4V4z"/>
+            <path d="M12 6c-2-1.5-5-1.5-7 0v10c2-1.5 5-1.5 7 0" />
+            <path d="M12 6c 2-1.5 5-1.5 7 0v10c-2-1.5-5-1.5-7 0" />
+            <path d="M12 6v12" />
           </svg>
           <span>הַתְחֵל לִקְרוֹא</span>
         </Link>
