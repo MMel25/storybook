@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main dir="rtl" className="hero">
-      <h1 className="title">הפיל שאהב לנגן</h1>
+      <h1 className="title">הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
 
       <p className="credits">
         <strong>מֵאֵת:</strong> מָאוֹר מְלַמֵּד<br/>
