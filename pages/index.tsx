@@ -8,8 +8,8 @@ export default function Home() {
       <h1 className="title">הפיל שאהב לנגן</h1>
 
       <p className="credits">
-        <strong>מאת:</strong> מאור קלמנד<br/>
-        <strong>איורים:</strong> בינה קלאמתית
+        <strong>מֵאֵת:</strong> מָאוֹר מְלַמֵּד<br/>
+        <strong>אִיּוּרִים:</strong> בִּינָה מְלָאכוּתִית
       </p>
 
       <Link href="/page1" aria-label="התחל לקרוא דרך התמונה" className="mediaLink">
@@ -25,7 +25,7 @@ export default function Home() {
       </Link>
 
       <Link href="/page1" className="cta">
-        🎵 התחל לקרוא
+        🎵 הַתְחֵל לִקְרוֹא
       </Link>
     </main>
   );
