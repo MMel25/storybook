@@ -1,13 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Page8() {
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
+      <Head>
+        <style>{`
+          .audio-wrapper {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 16px;
+          }
+          audio {
+            width: 100%;
+            accent-color: #ff9800;
+          }
+        `}</style>
+      </Head>
+
       {/* כותרת הספר */}
-      <h1 className="title" style={{ marginBottom: "4px" }}>
-        הַפִּיל שֶׁאָהַב לְנַגֵּן
-      </h1>
+      <h1 style={{ marginBottom: "4px" }}>הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
 
       {/* מספר עמוד */}
       <h2 style={{ fontSize: "1.3rem", color: "#555", marginTop: 0 }}>
@@ -35,6 +48,23 @@ export default function Page8() {
         />
       </div>
 
+      {/* כותרת "📖 הקרא" */}
+      <h3
+        style={{
+          fontSize: "1.4rem",
+          marginBottom: "8px",
+          color: "#ff9800",
+          fontWeight: "bold",
+        }}
+      >
+        📖 הַקְרֵא
+      </h3>
+
+      {/* נגן הקראה */}
+      <div className="audio-wrapper">
+        <audio src="/audio/page8.wav" preload="auto" controls />
+      </div>
+
       {/* טקסט הסיפור */}
       <div
         style={{
@@ -56,29 +86,6 @@ export default function Page8() {
 הֵבִינוּ מִיָּד, שֶׁסּוֹף סוֹף מָצָא, אֶת הַכִּישָּׁרוֹן...`}
       </div>
 
-      {/* כותרת לנגן + נגן האודיו */}
-      <h3
-        style={{
-          fontSize: "1.4rem",
-          marginBottom: "8px",
-          color: "#ff9800",
-          fontWeight: "bold",
-        }}
-      >
-        📖 הַקְרֵא
-      </h3>
-
-      <audio
-        src="/audio/page8.wav"
-        preload="auto"
-        controls
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          accentColor: "#ff9800",
-        }}
-      />
-
       {/* ניווט */}
       <div
         style={{
@@ -90,7 +97,6 @@ export default function Page8() {
           alignItems: "center",
         }}
       >
-        {/* הקודם – עמוד 7 */}
         <Link
           href="/page7"
           style={{
@@ -113,7 +119,6 @@ export default function Page8() {
           </svg>
         </Link>
 
-        {/* בית */}
         <Link
           href="/"
           style={{
@@ -134,7 +139,6 @@ export default function Page8() {
           </svg>
         </Link>
 
-        {/* הבא – עמוד 9 */}
         <Link
           href="/page9"
           style={{
