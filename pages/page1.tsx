@@ -58,7 +58,7 @@ export default function Page1() {
         style={{
           fontSize: "1.4rem",
           marginBottom: "8px",
-          color: "#ff9800",
+          color: "#ff9800", // אחידות עם צבע הנגן
           fontWeight: "bold",
         }}
       >
@@ -72,7 +72,7 @@ export default function Page1() {
         style={{
           width: "100%",
           maxWidth: "500px",
-          accentColor: "#ff9800", // צבע הפקדים
+          accentColor: "#ff9800", // צבע כתום־זהב לפקדים
         }}
       />
 
