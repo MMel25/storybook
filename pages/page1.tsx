@@ -6,15 +6,6 @@ export default function Page1() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-  };
-
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
       {/* כותרת הספר */}
@@ -51,7 +42,7 @@ export default function Page1() {
       {/* טקסט הסיפור */}
       <div
         style={{
-          fontSize: "1.4rem", // מוגדל
+          fontSize: "1.4rem",
           lineHeight: "2",
           maxWidth: "820px",
           margin: "0 auto 24px",
@@ -66,14 +57,38 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* נגן אודיו */}
-      <div style={{ marginBottom: "24px" }}>
+      {/* נגן עם נשמה */}
+      <div
+        style={{
+          marginBottom: "32px",
+          background: "linear-gradient(135deg, #ffecb3, #ffe082)",
+          padding: "16px",
+          borderRadius: "16px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+          display: "inline-block",
+        }}
+      >
+        <h3
+          style={{
+            marginTop: 0,
+            marginBottom: "8px",
+            fontSize: "1.4rem",
+            color: "#6d4c41",
+            fontWeight: "bold",
+          }}
+        >
+          📖 הַקְרֵא
+        </h3>
         <audio
           ref={audioRef}
-          src="/audio/page1.wav" // שימוש ב-WAV
+          src="/audio/page1.wav"
           preload="auto"
           controls
-          style={{ width: "100%", maxWidth: "400px" }}
+          style={{
+            width: "100%",
+            maxWidth: "350px",
+            filter: "hue-rotate(-10deg)",
+          }}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
         />
@@ -106,17 +121,9 @@ export default function Page1() {
           }}
         >
           <span>הַקּוֹדֶם</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </Link>
@@ -135,17 +142,9 @@ export default function Page1() {
             boxShadow: "0 3px 0 #3f51b5",
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V12H9v8a2 2 0 0 1-2 2H3z" />
           </svg>
         </Link>
@@ -165,17 +164,9 @@ export default function Page1() {
             boxShadow: "0 3px 0 #1b7f74",
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
           </svg>
           <span>הַבָּא</span>
