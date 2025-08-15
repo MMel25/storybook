@@ -1,54 +1,50 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="home" dir="rtl">
-      <Head>
-        <title>הַפִּיל שֶׁאָהַב לְנַגֵּן</title>
-        <meta name="description" content="סיפור ילדים מוזיקלי ושמח" />
-        <meta property="og:title" content="הַפִּיל שֶׁאָהַב לְנַגֵּן" />
-        <meta property="og:description" content="סיפור ילדים מוזיקלי ושמח" />
-        <meta property="og:image" content="https://storybook-rose-two.vercel.app/images/cover.png" />
-        <meta property="og:url" content="https://storybook-rose-two.vercel.app/" />
-        <meta property="og:type" content="website" />
+    <main dir="rtl" style={{maxWidth:'980px',margin:'0 auto',padding:'16px',textAlign:'center'}}>
+      <h1 style={{
+        background: 'linear-gradient(90deg,var(--brand-1),var(--brand-2),var(--brand-3))',
+        WebkitBackgroundClip: 'text',
+        color: 'transparent',
+        fontSize: 'clamp(2rem, 5vw, 3rem)'
+      }}>
+        הפיל שאהב לנגן
+      </h1>
 
-        {/* פונט ילדים ידידותי */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Heebo:wght@300;400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <p style={{color:'var(--ink-soft)'}}>
+        <strong style={{color:'var(--brand-1)'}}>מאת:</strong> מאור קלמנד<br/>
+        <strong style={{color:'var(--brand-1)'}}>איורים:</strong> בינה קלאמתית
+      </p>
 
-      <main className="hero">
-        <h1 className="hero__title">הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
-
-        <div className="hero__subtitle">
-          <p><span className="label">מֵאֵת:</span> מָאוֹר מְלַמֵּד</p>
-          <p><span className="label">אִיּוּרִים:</span> בִּינָה מְלָאכוּתִית</p>
+      <Link href="/page1" aria-label="התחל לקרוא דרך התמונה">
+        <div style={{
+          position:'relative',
+          aspectRatio:'3/4',
+          borderRadius:'20px',
+          overflow:'hidden',
+          margin:'16px auto',
+          maxWidth:'100%',
+          boxShadow:'0 8px 20px rgba(92,107,192,0.18)'
+        }}>
+          <Image src="/images/cover.png" alt="כריכת הספר" fill style={{objectFit:'cover'}}/>
         </div>
+      </Link>
 
-        <div className="hero__media">
-          <Image
-            src="/images/cover.png"
-            alt="כריכת הספר: הַפִּיל שֶׁאָהַב לְנַגֵּן"
-            fill
-            priority
-            sizes="100vw"
-            className="hero__img"
-          />
-        </div>
-
-        <nav className="hero__actions">
-          <Link href="/page1" className="cta">
-            <span className="cta__icon" aria-hidden>🎵</span>
-            הַתְחֵל לִקְרוֹא
-          </Link>
-        </nav>
-      </main>
-    </div>
+      <Link href="/page1" style={{
+        display:'inline-flex',
+        alignItems:'center',
+        gap:'8px',
+        padding:'12px 18px',
+        borderRadius:'999px',
+        background:'linear-gradient(180deg,var(--cta-1),var(--cta-2))',
+        color:'#4a2c00',
+        fontWeight:'bold',
+        boxShadow:`0 4px 0 var(--cta-shadow)`
+      }}>
+        🎵 התחל לקרוא
+      </Link>
+    </main>
   );
 }
