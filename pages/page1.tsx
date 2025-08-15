@@ -53,38 +53,28 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* נגן מובנה עם עיצוב וכותרת */}
-      <div
+      {/* כותרת לנגן + הנגן המובנה */}
+      <h3
         style={{
-          marginBottom: "32px",
-          background: "linear-gradient(135deg, #fff59d, #ffe082)",
-          padding: "16px",
-          borderRadius: "16px",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-          display: "inline-block",
+          fontSize: "1.4rem",
+          marginBottom: "8px",
+          color: "#ff9800",
+          fontWeight: "bold",
         }}
       >
-        <h3
-          style={{
-            marginTop: 0,
-            marginBottom: "8px",
-            fontSize: "1.4rem",
-            color: "#6d4c41",
-            fontWeight: "bold",
-          }}
-        >
-          📖 הַקְרֵא
-        </h3>
-        <audio
-          src="/audio/page1.wav"
-          preload="auto"
-          controls
-          style={{
-            width: "100%",
-            maxWidth: "350px",
-          }}
-        />
-      </div>
+        📖 הַקְרֵא
+      </h3>
+
+      <audio
+        src="/audio/page1.wav"
+        preload="auto"
+        controls
+        style={{
+          width: "100%",
+          maxWidth: "500px",
+          accentColor: "#ff9800", // צבע הפקדים
+        }}
+      />
 
       {/* ניווט */}
       <div
@@ -93,7 +83,7 @@ export default function Page1() {
           justifyContent: "space-between",
           maxWidth: "500px",
           margin: "0 auto",
-          marginTop: "16px",
+          marginTop: "24px",
           alignItems: "center",
         }}
       >
