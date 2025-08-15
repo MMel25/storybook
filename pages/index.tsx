@@ -28,7 +28,7 @@ export default function Home() {
       </Link>
 
       <nav className="cta-group">
-        {/* כפתור שיר קליפ מימין – לוגו YouTube */}
+        {/* כפתור שיר קליפ מימין – לוגו YouTube מוגדל */}
         <a
           href="https://youtu.be/-i0xPcRIUJU?si=fEbyzE-cF2CQIs2C"
           target="_blank"
@@ -39,11 +39,11 @@ export default function Home() {
             aria-hidden="true"
             focusable="false"
             viewBox="0 0 24 24"
-            width="20"
-            height="20"
+            width="28"
+            height="28"
             fill="currentColor"
           >
-            <path d="M10 9 L10 15 L15 12 Z" />
+            <path d="M10 8 L10 16 L16 12 Z" />
           </svg>
           <span>שִׁיר קְלִיפּ</span>
         </a>
@@ -54,8 +54,8 @@ export default function Home() {
             aria-hidden="true"
             focusable="false"
             viewBox="0 0 24 24"
-            width="20"
-            height="20"
+            width="22"
+            height="22"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
