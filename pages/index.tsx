@@ -7,8 +7,8 @@ export default function Home() {
       <h1 className="title">הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
 
       <p className="credits">
-        <strong>מֵאֵת:</strong> מָאוֹר קַלְמֶנְד<br/>
-        <strong>אִיּוּרִים:</strong> בִּינָה קַלְמֶנְדִית
+        <strong>מֵאֵת:</strong> מָאוֹר מְלַמֵּד<br/>
+        <strong>אִיּוּרִים:</strong> בִּינָה מְלָאכוּתִית
       </p>
 
       <Link
