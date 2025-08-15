@@ -14,7 +14,7 @@ export default function Home() {
         <meta property="og:url" content="https://storybook-rose-two.vercel.app/" />
         <meta property="og:type" content="website" />
 
-        {/* Google Fonts */}
+        {/* פונט ילדים ידידותי */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
@@ -35,10 +35,9 @@ export default function Home() {
           <Image
             src="/images/cover.png"
             alt="כריכת הספר: הַפִּיל שֶׁאָהַב לְנַגֵּן"
-            width={1800}
-            height={1200}
+            fill
             priority
-            sizes="(max-width: 640px) 94vw, (max-width: 1200px) 1100px, 1200px"
+            sizes="100vw"
             className="hero__img"
           />
         </div>
