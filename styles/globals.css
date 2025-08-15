@@ -18,6 +18,11 @@ body {
   text-align: center;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .hero {
   max-width: 1100px;
   margin: 0 auto;
@@ -60,7 +65,7 @@ body {
   }
 }
 
-/* דסקטופ – יחס רחב */
+/* דסקטופ – יחס רחב ומרכזי */
 @media (min-width: 768px) {
   .media {
     aspect-ratio: 16 / 9;
@@ -74,8 +79,12 @@ body {
   justify-content: center;
   gap: 12px;
   margin-top: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
+
+/* סדר הכפתורים: ימין - שיר קליפ, שמאל - התחל לקרוא */
+.cta.clip { order: 1; }
+.cta.read { order: 2; }
 
 .cta {
   display: inline-flex;
@@ -85,8 +94,8 @@ body {
   border-radius: 999px;
   font-weight: bold;
   font-size: 1rem;
-  text-decoration: none;
   transition: transform 0.15s ease;
+  white-space: nowrap;
 }
 
 .cta.read {
@@ -109,14 +118,20 @@ body {
   transform: translateY(-2px);
 }
 
+/* במובייל - שמירה על שני כפתורים בשורה, קטנים יותר */
 @media (max-width: 640px) {
   .cta-group {
-    flex-direction: column;
-    align-items: center;
+    gap: 8px;
   }
 
   .cta {
-    width: 100%;
-    justify-content: center;
+    flex: 1 1 0;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .cta svg {
+    width: 18px;
+    height: 18px;
   }
 }
