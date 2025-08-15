@@ -7,30 +7,26 @@ export default function Page9() {
       <Head>
         <style>{`
           .video-wrapper {
-            position: relative;
             width: 100%;
-            height: 600px;
             max-width: 500px;
             margin: 0 auto 24px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            aspect-ratio: 9 / 16; /* פורמט לאורך במובייל */
           }
 
           @media (min-width: 768px) {
             .video-wrapper {
-              padding-bottom: 56.25%;
-              height: 0;
               max-width: 900px;
+              aspect-ratio: 16 / 9; /* פורמט לרוחב בדסקטופ */
             }
+          }
 
-            .video-wrapper iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-            }
+          .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
           }
         `}</style>
       </Head>
@@ -62,13 +58,8 @@ export default function Page9() {
         <iframe
           src="https://www.youtube.com/embed/-i0xPcRIUJU?si=_YaYWUy0jkPN3u7d"
           title="קליפ השיר על הפיל שאהב לנגן"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
         ></iframe>
       </div>
 
