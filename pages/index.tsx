@@ -23,34 +23,32 @@ export default function Home() {
         />
       </Head>
 
-      <main className="home__card">
-        <div className="home__content">
-          <h1 className="home__title">הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
+      <main className="hero">
+        <h1 className="hero__title">הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
 
-          <div className="home__subtitle">
-            <p><span className="label">מֵאֵת:</span> מָאוֹר מְלַמֵּד</p>
-            <p><span className="label">אִיּוּרִים:</span> בִּינָה מְלָאכוּתִית</p>
-          </div>
-
-          <nav className="home__actions">
-            <Link href="/page1" className="cta">
-              <span className="cta__icon" aria-hidden>🎵</span>
-              הַתְחֵל לִקְרוֹא
-            </Link>
-          </nav>
+        <div className="hero__subtitle">
+          <p><span className="label">מֵאֵת:</span> מָאוֹר מְלַמֵּד</p>
+          <p><span className="label">אִיּוּרִים:</span> בִּינָה מְלָאכוּתִית</p>
         </div>
 
-        <div className="home__cover">
+        <div className="hero__media">
           <Image
             src="/images/cover.png"
             alt="כריכת הספר: הַפִּיל שֶׁאָהַב לְנַגֵּן"
-            width={900}
-            height={700}
+            width={1800}
+            height={1200}
             priority
-            sizes="(max-width: 768px) 92vw, (max-width: 1200px) 520px, 620px"
-            className="home__coverImg"
+            sizes="(max-width: 640px) 94vw, (max-width: 1200px) 1100px, 1200px"
+            className="hero__img"
           />
         </div>
+
+        <nav className="hero__actions">
+          <Link href="/page1" className="cta">
+            <span className="cta__icon" aria-hidden>🎵</span>
+            הַתְחֵל לִקְרוֹא
+          </Link>
+        </nav>
       </main>
     </div>
   );
