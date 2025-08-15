@@ -20,7 +20,9 @@ export default function Page5() {
       </Head>
 
       {/* כותרת הספר */}
-      <h1 style={{ marginBottom: "4px" }}>הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
+      <h1 className="title" style={{ marginBottom: "4px" }}>
+        הַפִּיל שֶׁאָהַב לְנַגֵּן
+      </h1>
 
       {/* מספר עמוד */}
       <h2 style={{ fontSize: "1.3rem", color: "#555", marginTop: 0 }}>
@@ -48,7 +50,7 @@ export default function Page5() {
         />
       </div>
 
-      {/* כותרת "הַקְרֵא" */}
+      {/* כותרת "📖 הַקְרֵא" */}
       <h3
         style={{
           fontSize: "1.4rem",
@@ -94,6 +96,7 @@ export default function Page5() {
           alignItems: "center",
         }}
       >
+        {/* הקודם */}
         <Link
           href="/page4"
           style={{
@@ -116,6 +119,7 @@ export default function Page5() {
           </svg>
         </Link>
 
+        {/* בית */}
         <Link
           href="/"
           style={{
@@ -136,6 +140,7 @@ export default function Page5() {
           </svg>
         </Link>
 
+        {/* הבא */}
         <Link
           href="/page6"
           style={{
