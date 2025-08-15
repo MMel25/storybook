@@ -57,11 +57,11 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* נגן עם נשמה */}
+      {/* נגן צבעוני עם כותרת */}
       <div
         style={{
           marginBottom: "32px",
-          background: "linear-gradient(135deg, #ffecb3, #ffe082)",
+          background: "linear-gradient(135deg, #fff59d, #ffe082)",
           padding: "16px",
           borderRadius: "16px",
           boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
@@ -87,7 +87,6 @@ export default function Page1() {
           style={{
             width: "100%",
             maxWidth: "350px",
-            filter: "hue-rotate(-10deg)",
           }}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
