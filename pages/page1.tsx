@@ -1,85 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useState } from "react";
-
-type CustomAudioPlayerProps = {
-  src: string;
-};
-
-function CustomAudioPlayer({ src }: CustomAudioPlayerProps) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleTimeUpdate = () => {
-    const current = audioRef.current?.currentTime || 0;
-    const total = audioRef.current?.duration || 1;
-    setProgress((current / total) * 100);
-  };
-
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!audioRef.current) return;
-    const total = audioRef.current.duration;
-    const newTime = (Number(e.target.value) / 100) * total;
-    audioRef.current.currentTime = newTime;
-  };
-
-  return (
-    <div
-      style={{
-        background: "#fff3e0",
-        padding: "16px",
-        borderRadius: "12px",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-        maxWidth: "500px",
-        margin: "0 auto",
-      }}
-    >
-      <audio
-        ref={audioRef}
-        src={src}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={() => setIsPlaying(false)}
-      />
-      <button
-        onClick={togglePlay}
-        style={{
-          background: "#ff9800",
-          border: "none",
-          color: "#fff",
-          padding: "10px 20px",
-          borderRadius: "999px",
-          cursor: "pointer",
-          fontWeight: "bold",
-          fontSize: "1rem",
-          marginBottom: "8px",
-        }}
-      >
-        {isPlaying ? "⏸ עצור" : "▶️ נגן"}
-      </button>
-      <input
-        type="range"
-        value={progress}
-        onChange={handleSeek}
-        style={{
-          width: "100%",
-          accentColor: "#ff9800",
-          cursor: "pointer",
-        }}
-      />
-    </div>
-  );
-}
 
 export default function Page1() {
   return (
@@ -133,7 +53,7 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* כותרת לנגן + הנגן החדש */}
+      {/* כותרת לנגן + הנגן המובנה */}
       <h3
         style={{
           fontSize: "1.4rem",
@@ -144,7 +64,17 @@ export default function Page1() {
       >
         📖 הַקְרֵא
       </h3>
-      <CustomAudioPlayer src="/audio/page1.wav" />
+
+      <audio
+        src="/audio/page1.wav"
+        preload="auto"
+        controls
+        style={{
+          width: "100%",
+          maxWidth: "500px",
+          accentColor: "#ff9800", // צבע הפקדים
+        }}
+      />
 
       {/* ניווט */}
       <div
@@ -157,7 +87,7 @@ export default function Page1() {
           alignItems: "center",
         }}
       >
-        {/* הקודם */}
+        {/* הקודם – חץ ימינה */}
         <Link
           href="/"
           style={{
@@ -201,7 +131,7 @@ export default function Page1() {
           </svg>
         </Link>
 
-        {/* הבא */}
+        {/* הבא – חץ שמאלה */}
         <Link
           href="/page2"
           style={{
