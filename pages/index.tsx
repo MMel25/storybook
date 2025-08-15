@@ -1,9 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
-      <h1>ברוכים הבאים!</h1>
+    <main dir="rtl" className="hero">
+      <h1 className="title">הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
+
+      <p className="credits">
+        <strong>מֵאֵת:</strong> מָאוֹר קַלְמֶנְד<br/>
+        <strong>אִיּוּרִים:</strong> בִּינָה קַלְמֶנְדִית
+      </p>
+
+      <Link href="/page1" className="mediaLink" aria-label="התחל לקרוא דרך התמונה">
+        <div className="media">
+          <Image
+            src="/images/cover.png"
+            alt="כריכת הספר"
+            fill
+            priority
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </Link>
 
       <nav className="cta-group">
         <Link href="/page1" className="cta read">
@@ -19,8 +37,8 @@ export default function Home() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             fill="white"
           >
             <path d="M10 15.5l6-3.5-6-3.5v7z"/>
