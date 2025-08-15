@@ -1,11 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useState } from "react";
 
 export default function Page1() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
       {/* כותרת הספר */}
@@ -57,7 +53,7 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* נגן צבעוני עם כותרת */}
+      {/* נגן מובנה עם עיצוב וכותרת */}
       <div
         style={{
           marginBottom: "32px",
@@ -80,7 +76,6 @@ export default function Page1() {
           📖 הַקְרֵא
         </h3>
         <audio
-          ref={audioRef}
           src="/audio/page1.wav"
           preload="auto"
           controls
@@ -88,8 +83,6 @@ export default function Page1() {
             width: "100%",
             maxWidth: "350px",
           }}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
         />
       </div>
 
