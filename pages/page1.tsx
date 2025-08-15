@@ -50,16 +50,7 @@ export default function Page1() {
         />
       </div>
 
-      {/* הנגן — עכשיו בין התמונה לטקסט */}
-      <div className="audio-wrapper">
-        <audio
-          src="/audio/page1.wav"
-          preload="auto"
-          controls
-        />
-      </div>
-
-      {/* כותרת "הקרא" */}
+      {/* כותרת "הקרא" מעל לנגן */}
       <h3
         style={{
           fontSize: "1.4rem",
@@ -70,6 +61,15 @@ export default function Page1() {
       >
         📖 הַקְרֵא
       </h3>
+
+      {/* הנגן */}
+      <div className="audio-wrapper">
+        <audio
+          src="/audio/page1.wav"
+          preload="auto"
+          controls
+        />
+      </div>
 
       {/* טקסט הסיפור */}
       <div
@@ -100,6 +100,7 @@ export default function Page1() {
           alignItems: "center",
         }}
       >
+        {/* הקודם */}
         <Link
           href="/"
           style={{
@@ -122,6 +123,7 @@ export default function Page1() {
           </svg>
         </Link>
 
+        {/* בית */}
         <Link
           href="/"
           style={{
@@ -142,6 +144,7 @@ export default function Page1() {
           </svg>
         </Link>
 
+        {/* הבא */}
         <Link
           href="/page2"
           style={{
