@@ -1,72 +1,9 @@
-/* styles/globals.css */
-:root {
-  --bg: #fff7ec;
-  --ink: #203047;
-  --ink-soft: #3a4a5f;
-  --brand-1: #5c6bc0;
-  --brand-2: #26a69a;
-  --brand-3: #ff7043;
-  --cta-1: #ffd37a;
-  --cta-2: #ffb74d;
-  --cta-shadow: #e59a3a;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  font-family: "Varela Round","Heebo",sans-serif;
-  color: var(--ink);
-  text-align: center;
-}
-
-a {
-  color: inherit;
-  text-decoration: none; /* 🔹 מבטל קו תחתון לכל הקישורים */
-}
-
-.hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
-}
-
-.title {
-  background: linear-gradient(90deg,var(--brand-1),var(--brand-2),var(--brand-3));
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.credits {
-  color: var(--ink-soft);
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-}
-
-.media {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(92,107,192,0.18);
-  background: #e3ecff;
-  margin: 0 auto;
-}
-
-/* מובייל – יחס עומד */
-@media (max-width: 767px) {
-  .media {
-    aspect-ratio: 3 / 4;
-    width: 100%;
-  }
-}
-
-/* דסקטופ – יחס רחב ומורחב במרכז */
-@media (min-width: 768px) {
-  .media {
-    aspect-ratio: 16 / 9;
-    width: 90%;         /* 🔹 מרחיב את התמונה */
-    max-width: 1050px;  /* שליטה מקסימלית ברוחב */
-  }
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
 }
 
 .cta {
@@ -75,9 +12,41 @@ a {
   gap: 8px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: linear-gradient(180deg,var(--cta-1),var(--cta-2));
-  color: #4a2c00;
   font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
   box-shadow: 0 4px 0 var(--cta-shadow);
-  margin-top: 12px;
+  transition: transform 0.15s ease;
+}
+
+.cta.read {
+  background: linear-gradient(180deg, var(--cta-1), var(--cta-2));
+  color: #4a2c00;
+  box-shadow: 0 4px 0 #b97c2a;
+}
+
+.cta.clip {
+  background: linear-gradient(180deg, #ff0000, #cc0000);
+  color: #fff;
+  box-shadow: 0 4px 0 #990000;
+}
+
+.cta.clip svg {
+  flex-shrink: 0;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
