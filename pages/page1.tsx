@@ -97,7 +97,7 @@ export default function Page1() {
       </button>
 
       {/* נגן האודיו (נסתר) */}
-      <audio ref={audioRef} src="/audio/page1.mp3" preload="auto" />
+      <audio ref={audioRef} src="/audio/page1.wav" preload="auto" />
 
       {/* ניווט בין עמודים */}
       <div
