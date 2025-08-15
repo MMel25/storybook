@@ -1,13 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Page1() {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const playAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
       audioRef.current.play();
     }
   };
@@ -18,12 +21,13 @@ export default function Page1() {
       <h1 className="title" style={{ marginBottom: "4px" }}>
         הַפִּיל שֶׁאָהַב לְנַגֵּן
       </h1>
+
       {/* מספר עמוד */}
-      <h2 style={{ fontSize: "1.2rem", color: "#555", marginTop: 0 }}>
+      <h2 style={{ fontSize: "1.3rem", color: "#555", marginTop: 0 }}>
         עַמּוּד 1
       </h2>
 
-      {/* תמונה בפורמט לרוחב */}
+      {/* תמונה */}
       <div
         style={{
           position: "relative",
@@ -47,14 +51,14 @@ export default function Page1() {
       {/* טקסט הסיפור */}
       <div
         style={{
-          fontSize: "1.2rem",
-          lineHeight: "1.8",
-          maxWidth: "800px",
+          fontSize: "1.4rem", // מוגדל
+          lineHeight: "2",
+          maxWidth: "820px",
           margin: "0 auto 24px",
           whiteSpace: "pre-line",
         }}
       >
-        {`בְּיַעַר רָחוֹק, בֵּין הֶהָרִים, חַיָּה מִשֶּׁפָּחַת פִּילִים, לֹא כֹּל כָּךְ רְגִילִים.
+{`בְּיַעַר רָחוֹק, בֵּין הֶהָרִים, חַיָּה מִשֶּׁפָּחַת פִּילִים, לֹא כֹּל כָּךְ רְגִילִים.
 בַּמִּשְׁפָּחָה הַפִּילִים, בְּעִיקָּר הָיוּ מוּכְשָׁרִים.
 עוֹרֵךְ דִּין אַבָּא פִּיל, אֶת הָרָעִים מַפְלִיל,
 אִימָּא פִילָה שָׁרָה בַּמַּקְהֵלָה,
@@ -62,44 +66,20 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* כפתור האזנה */}
-      <button
-        onClick={playAudio}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "8px",
-          padding: "10px 16px",
-          borderRadius: "999px",
-          border: "none",
-          background: "linear-gradient(180deg, #ffd37a, #ffb74d)",
-          color: "#4a2c00",
-          fontWeight: "bold",
-          fontSize: "1rem",
-          boxShadow: "0 4px 0 #e59a3a",
-          cursor: "pointer",
-          marginBottom: "24px",
-        }}
-      >
-        {/* אייקון רמקול */}
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          fill="currentColor"
-        >
-          <path d="M3 9v6h4l5 5V4L7 9H3z" />
-          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03z" />
-        </svg>
-        הַקְרֵא
-      </button>
+      {/* נגן אודיו */}
+      <div style={{ marginBottom: "24px" }}>
+        <audio
+          ref={audioRef}
+          src="/audio/page1.wav" // שימוש ב-WAV
+          preload="auto"
+          controls
+          style={{ width: "100%", maxWidth: "400px" }}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        />
+      </div>
 
-      {/* נגן האודיו (נסתר) */}
-      <audio ref={audioRef} src="/audio/page1.wav" preload="auto" />
-
-      {/* ניווט בין עמודים */}
+      {/* ניווט */}
       <div
         style={{
           display: "flex",
@@ -110,22 +90,26 @@ export default function Page1() {
           alignItems: "center",
         }}
       >
-        {/* הקודם */}
+        {/* הקודם – חץ ימינה */}
         <Link
           href="/"
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "4px",
-            textDecoration: "none",
-            color: "#333",
+            gap: "6px",
+            background: "#ffd37a",
+            padding: "10px 14px",
+            borderRadius: "999px",
             fontWeight: "bold",
+            color: "#4a2c00",
+            boxShadow: "0 3px 0 #e59a3a",
           }}
         >
+          <span>הַקּוֹדֶם</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -133,17 +117,22 @@ export default function Page1() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <polyline points="15 18 9 12 15 6" />
+            <polyline points="9 18 15 12 9 6" />
           </svg>
-          <span>הַקּוֹדֶם</span>
         </Link>
 
         {/* בית */}
         <Link
           href="/"
           style={{
-            textDecoration: "none",
-            color: "#333",
+            background: "#5c6bc0",
+            padding: "10px",
+            borderRadius: "50%",
+            color: "#fff",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0 3px 0 #3f51b5",
           }}
         >
           <svg
@@ -161,23 +150,25 @@ export default function Page1() {
           </svg>
         </Link>
 
-        {/* הבא */}
+        {/* הבא – חץ שמאלה */}
         <Link
           href="/page2"
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "4px",
-            textDecoration: "none",
-            color: "#333",
+            gap: "6px",
+            background: "#26a69a",
+            padding: "10px 14px",
+            borderRadius: "999px",
             fontWeight: "bold",
+            color: "#fff",
+            boxShadow: "0 3px 0 #1b7f74",
           }}
         >
-          <span>הַבָּא</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -185,8 +176,9 @@ export default function Page1() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <polyline points="9 18 15 12 9 6" />
+            <polyline points="15 18 9 12 15 6" />
           </svg>
+          <span>הַבָּא</span>
         </Link>
       </div>
     </main>
