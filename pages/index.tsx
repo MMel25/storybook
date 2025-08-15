@@ -21,8 +21,11 @@ export default function Home() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:secure_url" content={imageUrl} />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="כריכת הספר" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +59,6 @@ export default function Home() {
         </Link>
 
         <nav className="cta-group">
-          {/* כפתור שיר קליפ */}
           <a
             href={`${siteUrl}/page9`}
             target="_blank"
@@ -76,7 +78,6 @@ export default function Home() {
             <span>שִׁיר קְלִיפּ</span>
           </a>
 
-          {/* כפתור התחל לקרוא */}
           <Link href="/page1" className="cta read">
             <svg
               aria-hidden="true"
