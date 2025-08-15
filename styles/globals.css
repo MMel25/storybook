@@ -1,148 +1,145 @@
 /* רקע עדין ושמח לכל האתר */
+:root{
+  --bg-1: #fff7ec;
+  --ink: #203047;
+  --ink-soft: #3a4a5f;
+  --brand-1: #5c6bc0;
+  --brand-2: #26a69a;
+  --brand-3: #ff7043;
+  --frame: #e3ecff;
+  --card-border: #f0e7da;
+  --cta-1: #ffd37a;
+  --cta-2: #ffb74d;
+  --cta-shadow: #e59a3a;
+}
+
+* { box-sizing: border-box; }
 body {
   margin: 0;
-  background: linear-gradient(180deg, #fff7ec 0%, #fff 100%);
-  color: #203047;
+  background: linear-gradient(180deg, var(--bg-1) 0%, #fff 100%);
+  color: var(--ink);
   font-family: 'Varela Round', 'Heebo', system-ui, -apple-system, sans-serif;
 }
 
-/* עמוד הפתיחה */
+/* הירו מלא מסך: כותרות למעלה, תמונה תופסת את רוב המסך, כפתור למטה */
 .home {
-  min-height: 100vh;
+  min-height: 100svh;
   display: grid;
-  place-items: center;
-  padding: 24px;
-  box-sizing: border-box;
 }
 
-.home__card {
-  width: 100%;
-  max-width: 1060px;
-  background: #ffffffcc;
-  backdrop-filter: blur(4px);
-  border: 1px solid #f0e7da;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(32, 48, 71, 0.08);
+.hero {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  min-height: 100svh;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 28px;
+  grid-template-rows: auto auto 1fr auto;
+  justify-items: center;
   align-items: center;
-  padding: 32px 32px 32px 40px;
+  gap: 12px;
+  padding: 28px 24px;
 }
 
-.home__content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.home__title {
+/* טייטלים */
+.hero__title {
   margin: 0;
-  font-size: 3rem;
+  text-align: center;
+  font-size: clamp(2rem, 2.6rem + 0.6vw, 3.4rem);
   line-height: 1.1;
-  letter-spacing: 0.5px;
-  background: linear-gradient(90deg, #5c6bc0 0%, #26a69a 50%, #ff7043 100%);
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2), var(--brand-3));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow: 0 2px 0 rgba(92, 107, 192, 0.08);
 }
 
-.home__subtitle {
-  margin-top: 4px;
-  font-size: 1.25rem;
-  color: #3a4a5f;
+.hero__subtitle {
+  text-align: center;
+  font-size: clamp(1.05rem, 1rem + 0.2vw, 1.25rem);
+  color: var(--ink-soft);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
-
-.home__subtitle .label {
-  color: #5c6bc0;
+.hero__subtitle .label {
+  color: var(--brand-1);
   font-weight: 700;
   margin-left: 8px;
 }
 
-/* כפתור קריאה ידידותי לילדים */
-.home__actions {
-  margin-top: 12px;
+/* תמונה תופסת את רוב המסך */
+.hero__media {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  display: grid;
+  place-items: center;
+  align-self: stretch; /* כדי לאפשר לתמונה לצמוח בגובה */
 }
 
-.home__actions .cta {
+.hero__img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(360px, 68vh, 820px);
+  border-radius: 20px;
+  border: 3px solid var(--frame);
+  box-shadow: 0 12px 28px rgba(92, 107, 192, 0.18);
+  background: #f7fbff;
+  object-fit: contain;
+}
+
+/* כפתור נעים וקליל */
+.hero__actions {
+  margin-top: 6px;
+}
+.cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 18px;
+  padding: 11px 18px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #ffd37a 0%, #ffb74d 100%);
+  background: linear-gradient(180deg, var(--cta-1) 0%, var(--cta-2) 100%);
   color: #4a2c00;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.05rem; /* קטן יותר מהגרסה הקודמת */
   text-decoration: none;
-  box-shadow: 0 6px 0 #e59a3a, 0 10px 20px rgba(255, 183, 77, 0.35);
+  box-shadow: 0 6px 0 var(--cta-shadow), 0 10px 20px rgba(255, 183, 77, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.2s ease;
 }
-
-.home__actions .cta:hover {
+.cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #e59a3a, 0 14px 24px rgba(255, 183, 77, 0.4);
+  box-shadow: 0 8px 0 var(--cta-shadow), 0 14px 24px rgba(255, 183, 77, 0.4);
   filter: saturate(1.06);
 }
-
-.home__actions .cta:active {
-  transform: translateY(0px);
-  box-shadow: 0 4px 0 #e59a3a, 0 8px 16px rgba(255, 183, 77, 0.3);
+.cta:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 0 var(--cta-shadow), 0 8px 16px rgba(255, 183, 77, 0.3);
 }
+.cta__icon { font-size: 1.2rem; }
 
-.cta__icon {
-  font-size: 1.25rem;
-}
-
-/* תמונת כריכה גדולה וברורה בדסקטופ, מעוגלת עם מסגרת */
-.home__cover {
-  width: 100%;
-  justify-self: center;
-}
-
-.home__coverImg {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  border: 3px solid #e3ecff;
-  box-shadow: 0 12px 28px rgba(92, 107, 192, 0.18);
-  background: #f7fbff;
-}
-
-/* רספונסיביות */
-@media (max-width: 1024px) {
-  .home__card {
-    grid-template-columns: 1fr;
-    padding: 28px;
-    gap: 22px;
-  }
-  .home__title {
-    font-size: 2.4rem;
+/* מסגרות עדינות סביב התמונה */
+@media (min-width: 1024px) {
+  .hero {
+    gap: 14px;
+    padding: 36px 32px;
   }
 }
 
+/* מובייל: אותו סדר, ריווח נכון וכפתור קומפקטי */
 @media (max-width: 640px) {
-  .home {
-    padding: 16px;
+  .hero {
+    gap: 10px;
+    padding: 20px 16px;
   }
-  .home__card {
-    border-radius: 18px;
-    padding: 22px;
+  .hero__img {
+    max-height: 58vh; /* כדי שלא "תאכל" את הכפתור */
+    border-width: 2px;
+    border-radius: 16px;
   }
-  .home__title {
-    font-size: 2rem;
-  }
-  .home__subtitle {
-    font-size: 1.05rem;
-  }
-  .home__actions .cta {
+  .cta {
     width: 100%;
     justify-content: center;
-    font-size: 1rem;
-    padding: 12px 16px;
+    font-size: 0.98rem;
+    padding: 10px 14px;
+    box-shadow: 0 5px 0 var(--cta-shadow), 0 8px 16px rgba(255, 183, 77, 0.3);
   }
 }
