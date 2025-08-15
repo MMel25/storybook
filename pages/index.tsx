@@ -6,7 +6,7 @@ export default function Home() {
   const siteUrl = "https://storybook-rose-two.vercel.app";
   const title = "הַפִּיל שֶׁאָהַב לְנַגֵּן";
   const description = "ספר ילדים מאת מָאוֹר מְלַמֵּד";
-  const imageUrl = `${siteUrl}/images/cover.png`;
+  const imageUrl = `${siteUrl}/images/cover.png?v=2`; // פרמטר קטן לעקיפת cache
 
   return (
     <>
