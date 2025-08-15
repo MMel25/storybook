@@ -30,7 +30,7 @@ export default function Home() {
       <nav className="cta-group">
         {/* כפתור שיר קליפ מימין – לוגו YouTube מוגדל */}
         <a
-          href="https://youtu.be/-i0xPcRIUJU?si=fEbyzE-cF2CQIs2C"
+          href="https://storybook-rose-two.vercel.app/page9"
           target="_blank"
           rel="noopener noreferrer"
           className="cta clip"
