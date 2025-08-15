@@ -1,9 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Page3() {
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
+      <Head>
+        <style>{`
+          .audio-wrapper {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 16px;
+          }
+          audio {
+            width: 100%;
+            accent-color: #ff9800;
+          }
+        `}</style>
+      </Head>
+
       {/* כותרת הספר */}
       <h1 className="title" style={{ marginBottom: "4px" }}>
         הַפִּיל שֶׁאָהַב לְנַגֵּן
@@ -35,6 +50,27 @@ export default function Page3() {
         />
       </div>
 
+      {/* כותרת "הקרא" מעל הנגן */}
+      <h3
+        style={{
+          fontSize: "1.4rem",
+          marginBottom: "8px",
+          color: "#ff9800",
+          fontWeight: "bold",
+        }}
+      >
+        📖 הַקְרֵא
+      </h3>
+
+      {/* נגן ההקראה */}
+      <div className="audio-wrapper">
+        <audio
+          src="/audio/page3.wav"
+          preload="auto"
+          controls
+        />
+      </div>
+
       {/* טקסט הסיפור */}
       <div
         style={{
@@ -54,29 +90,6 @@ export default function Page3() {
 הֶחְלַטְתִּי לִלְמוֹד לְנַגֵּן עַל כְּלִי נְגִינָה!"`}
       </div>
 
-      {/* כותרת לנגן + הנגן המובנה */}
-      <h3
-        style={{
-          fontSize: "1.4rem",
-          marginBottom: "8px",
-          color: "#ff9800",
-          fontWeight: "bold",
-        }}
-      >
-        📖 הַקְרֵא
-      </h3>
-
-      <audio
-        src="/audio/page3.wav"
-        preload="auto"
-        controls
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          accentColor: "#ff9800", // צבע הפקדים
-        }}
-      />
-
       {/* ניווט */}
       <div
         style={{
@@ -88,7 +101,7 @@ export default function Page3() {
           alignItems: "center",
         }}
       >
-        {/* הקודם – חץ ימינה לעמוד 2 */}
+        {/* הקודם */}
         <Link
           href="/page2"
           style={{
@@ -132,7 +145,7 @@ export default function Page3() {
           </svg>
         </Link>
 
-        {/* הבא – חץ שמאלה לעמוד 4 */}
+        {/* הבא */}
         <Link
           href="/page4"
           style={{
