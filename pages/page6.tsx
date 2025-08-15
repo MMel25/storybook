@@ -20,7 +20,9 @@ export default function Page6() {
       </Head>
 
       {/* כותרת הספר */}
-      <h1 style={{ marginBottom: "4px" }}>הַפִּיל שֶׁאָהַב לְנַגֵּן</h1>
+      <h1 className="title" style={{ marginBottom: "4px" }}>
+        הַפִּיל שֶׁאָהַב לְנַגֵּן
+      </h1>
 
       {/* מספר עמוד */}
       <h2 style={{ fontSize: "1.3rem", color: "#555", marginTop: 0 }}>
