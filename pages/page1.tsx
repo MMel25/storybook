@@ -53,7 +53,7 @@ export default function Page1() {
 הַפִּיל הָאֶמְצָעִי, כּוֹכָב טֶנִיס וַדָּאִי,`}
       </div>
 
-      {/* כותרת לנגן + הנגן המובנה */}
+      {/* כותרת לנגן */}
       <h3
         style={{
           fontSize: "1.4rem",
@@ -65,16 +65,38 @@ export default function Page1() {
         📖 הַקְרֵא
       </h3>
 
-      <audio
-        src="/audio/page1.wav"
-        preload="auto"
-        controls
+      {/* נגן עם שדרוגים עדינים */}
+      <div
         style={{
-          width: "100%",
-          maxWidth: "500px",
-          accentColor: "#ff9800", // צבע הפקדים
+          display: "inline-block",
+          background: "#fff8f0",
+          padding: "12px",
+          borderRadius: "12px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
         }}
-      />
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLDivElement).style.transform = "scale(1.02)";
+          (e.currentTarget as HTMLDivElement).style.boxShadow =
+            "0 6px 14px rgba(0,0,0,0.12)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLDivElement).style.transform = "scale(1)";
+          (e.currentTarget as HTMLDivElement).style.boxShadow =
+            "0 4px 10px rgba(0,0,0,0.08)";
+        }}
+      >
+        <audio
+          src="/audio/page1.wav"
+          preload="auto"
+          controls
+          style={{
+            width: "100%",
+            maxWidth: "500px",
+            accentColor: "#ff9800",
+          }}
+        />
+      </div>
 
       {/* ניווט */}
       <div
@@ -87,7 +109,7 @@ export default function Page1() {
           alignItems: "center",
         }}
       >
-        {/* הקודם – חץ ימינה */}
+        {/* הקודם */}
         <Link
           href="/"
           style={{
@@ -131,7 +153,7 @@ export default function Page1() {
           </svg>
         </Link>
 
-        {/* הבא – חץ שמאלה */}
+        {/* הבא */}
         <Link
           href="/page2"
           style={{
