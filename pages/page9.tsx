@@ -1,8 +1,40 @@
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Page9() {
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
+      <Head>
+        <style>{`
+          .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            max-width: 500px;
+            margin: 0 auto 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+          }
+
+          @media (min-width: 768px) {
+            .video-wrapper {
+              padding-bottom: 56.25%;
+              height: 0;
+              max-width: 900px;
+            }
+
+            .video-wrapper iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        `}</style>
+      </Head>
+
       {/* כותרת הספר */}
       <h1 className="title" style={{ marginBottom: "4px" }}>
         הַפִּיל שֶׁאָהַב לְנַגֵּן
@@ -13,7 +45,7 @@ export default function Page9() {
         עַמּוּד 9
       </h2>
 
-      {/* כותרת ראשית של העמוד */}
+      {/* כותרת ראשית */}
       <h3
         style={{
           fontSize: "1.6rem",
@@ -26,18 +58,7 @@ export default function Page9() {
       </h3>
 
       {/* סרטון מוטמע */}
-      <div
-        style={{
-          position: "relative",
-          paddingBottom: "56.25%",
-          height: 0,
-          overflow: "hidden",
-          borderRadius: "12px",
-          boxShadow: "0 6px 18px rgba(0,0,0,0.1)",
-          maxWidth: "900px",
-          margin: "0 auto 24px",
-        }}
-      >
+      <div className="video-wrapper">
         <iframe
           src="https://www.youtube.com/embed/-i0xPcRIUJU?si=_YaYWUy0jkPN3u7d"
           title="קליפ השיר על הפיל שאהב לנגן"
@@ -45,9 +66,6 @@ export default function Page9() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
             width: "100%",
             height: "100%",
           }}
@@ -65,7 +83,7 @@ export default function Page9() {
           alignItems: "center",
         }}
       >
-        {/* הקודם – עמוד 8 */}
+        {/* הקודם */}
         <Link
           href="/page8"
           style={{
