@@ -24,16 +24,14 @@ export default function Home() {
       </Link>
 
       <nav className="cta-group">
-        <Link href="/page1" className="cta read">
-          📖 הַתְחֵל לִקְרוֹא
-        </Link>
-
+        {/* כפתור שיר קליפ מימין */}
         <a
           href="https://youtu.be/-i0xPcRIUJU?si=fEbyzE-cF2CQIs2C"
           target="_blank"
           rel="noopener noreferrer"
           className="cta clip"
         >
+          {/* לוגו יוטיוב אמיתי */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -46,6 +44,21 @@ export default function Home() {
           </svg>
           <span>שִׁיר קְלִיפּ</span>
         </a>
+
+        {/* כפתור התחלת קריאה משמאל */}
+        <Link href="/page1" className="cta read">
+          {/* אייקון ספר */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="#4a2c00"
+          >
+            <path d="M19 2H10a1 1 0 0 0-1 1v15a4 4 0 0 1 0 8h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM8 4H5a1 1 0 0 0-1 1v15a4 4 0 0 1 0 8h4V4z"/>
+          </svg>
+          <span>הַתְחֵל לִקְרוֹא</span>
+        </Link>
       </nav>
     </main>
   );
