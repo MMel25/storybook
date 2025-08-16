@@ -16,6 +16,13 @@ export default function Page3() {
             width: 100%;
             accent-color: #ff9800;
           }
+
+          /* ✅ סרגל ניווט בדסקטופ */
+          @media (min-width: 768px) {
+            .nav-bar {
+              max-width: 900px !important;
+            }
+          }
         `}</style>
       </Head>
 
@@ -79,6 +86,7 @@ export default function Page3() {
           maxWidth: "820px",
           margin: "0 auto 24px",
           whiteSpace: "pre-line",
+          textAlign: "right", // ✅ יישור לימין
         }}
       >
 {`הִרְהֵר הַפִּילוֹן, כָּךְ שֶׁכְּבָר לֹא יָכול לִישׁוֹן, וְאָז בְּמוֹחוֹ עָלָה רַעְיוֹן...
@@ -92,10 +100,11 @@ export default function Page3() {
 
       {/* ניווט */}
       <div
+        className="nav-bar"
         style={{
           display: "flex",
           justifyContent: "space-between",
-          maxWidth: "500px",
+          maxWidth: "500px", // יוחלף בדסקטופ
           margin: "0 auto",
           marginTop: "24px",
           alignItems: "center",
