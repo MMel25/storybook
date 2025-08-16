@@ -154,7 +154,7 @@ a {
 /* ✅ מיכל לנגן */
 .audio-wrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto 16px;
 }
 
@@ -177,6 +177,10 @@ a {
 @media (min-width: 768px) {
   .page-content {
     padding: 0 24px;
+  }
+  
+  .audio-wrapper {
+    max-width: 700px;
   }
   
   .story-text {
