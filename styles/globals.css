@@ -150,10 +150,13 @@ a {
   margin: 0 auto 24px;
   white-space: pre-line;
   text-align: right;
+  word-break: keep-all;
+  padding-inline: 12px;
 }
 
 @media (min-width: 768px) {
   .story-text {
     max-width: 1000px;
+    line-height: 2.2;
   }
 }
