@@ -16,6 +16,13 @@ export default function Page6() {
             width: 100%;
             accent-color: #ff9800;
           }
+
+          /* ✅ סרגל ניווט בדסקטופ */
+          @media (min-width: 768px) {
+            .nav-bar {
+              max-width: 900px !important;
+            }
+          }
         `}</style>
       </Head>
 
@@ -75,6 +82,7 @@ export default function Page6() {
           maxWidth: "820px",
           margin: "0 auto 24px",
           whiteSpace: "pre-line",
+          textAlign: "right", // ✅ יישור לימין
         }}
       >
 {`אַבָּא לִיטֵּף אֶת רֹאשׁוֹ וְאָמַר: "גַּם לְגִיבּוֹר, לְעִיתִּים קָשֶׁה לִבְחוֹר,
@@ -87,10 +95,11 @@ export default function Page6() {
 
       {/* ניווט */}
       <div
+        className="nav-bar"
         style={{
           display: "flex",
           justifyContent: "space-between",
-          maxWidth: "500px",
+          maxWidth: "500px", // יוחלף בדסקטופ
           margin: "0 auto",
           marginTop: "24px",
           alignItems: "center",
