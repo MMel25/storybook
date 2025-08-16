@@ -16,6 +16,13 @@ export default function Page1() {
             width: 100%;
             accent-color: #ff9800;
           }
+
+          /* ✅ סרגל ניווט בדסקטופ */
+          @media (min-width: 768px) {
+            .nav-bar {
+              max-width: 900px !important;
+            }
+          }
         `}</style>
       </Head>
 
@@ -92,10 +99,11 @@ export default function Page1() {
 
       {/* ניווט */}
       <div
+        className="nav-bar"
         style={{
           display: "flex",
           justifyContent: "space-between",
-          maxWidth: "500px",
+          maxWidth: "500px", // יוחלף בדסקטופ
           margin: "0 auto",
           marginTop: "24px",
           alignItems: "center",
