@@ -16,6 +16,13 @@ export default function Page8() {
             width: 100%;
             accent-color: #ff9800;
           }
+
+          /* ✅ סרגל ניווט בדסקטופ */
+          @media (min-width: 768px) {
+            .nav-bar {
+              max-width: 900px !important;
+            }
+          }
         `}</style>
       </Head>
 
@@ -75,6 +82,7 @@ export default function Page8() {
           maxWidth: "820px",
           margin: "0 auto 24px",
           whiteSpace: "pre-line",
+          textAlign: "right", // ✅ יישור לימין
         }}
       >
 {`פִּתְאוֹם הִגִּיעַ גִּיל, הַלֹּא הוּא הַמּוֹרֶה לְחָלִיל, וּמִיָּד עִם הַפִּילוֹן
@@ -90,10 +98,11 @@ export default function Page8() {
 
       {/* ניווט */}
       <div
+        className="nav-bar"
         style={{
           display: "flex",
           justifyContent: "space-between",
-          maxWidth: "500px",
+          maxWidth: "500px", // יוחלף בדסקטופ
           margin: "0 auto",
           marginTop: "24px",
           alignItems: "center",
@@ -125,12 +134,13 @@ export default function Page8() {
           href="/"
           style={{
             background: "#5c6bc0",
-            padding: "10px",
-            borderRadius: "50%",
+            padding: "10px 16px",
+            borderRadius: "999px",
             color: "#fff",
+            fontWeight: "bold",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            gap: "8px",
             boxShadow: "0 3px 0 #3f51b5",
           }}
         >
@@ -139,6 +149,7 @@ export default function Page8() {
             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V12H9v8a2 2 0 0 1-2 2H3z" />
           </svg>
+          <span>לַדַּף הָרִאשׁוֹן</span>
         </Link>
 
         <Link
