@@ -79,6 +79,7 @@ export default function Page1() {
           maxWidth: "820px",
           margin: "0 auto 24px",
           whiteSpace: "pre-line",
+          textAlign: "right", // ✅ יישור לימין
         }}
       >
 {`בְּיַעַר רָחוֹק, בֵּין הֶהָרִים, חַיָּה מִשֶּׁפָּחַת פִּילִים, לֹא כֹּל כָּךְ רְגִילִים.
