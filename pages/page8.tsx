@@ -16,7 +16,6 @@ export default function Page8() {
             width: 100%;
             accent-color: #ff9800;
           }
-
           @media (min-width: 768px) {
             .nav-bar {
               max-width: 900px !important;
@@ -68,13 +67,13 @@ export default function Page8() {
         📖 הַקְרֵא
       </h3>
 
-      {/* נגן הקראה */}
-      <div className="audio-wrapper">
-        <audio src="/audio/page8.wav" preload="auto" controls />
-      </div>
+      {/* נגן + טקסט */}
+      <div className="media-and-text">
+        <div className="audio-wrapper">
+          <audio src="/audio/page8.wav" preload="auto" controls />
+        </div>
 
-      {/* טקסט הסיפור */}
-      <div className="story-text">
+        <div className="story-text">
 {`פִּתְאוֹם הִגִּיעַ גִּיל, הַלֹּא הוּא הַמּוֹרֶה לְחָלִיל, וּמִיָּד עִם הַפִּילוֹן
 לְנַגֵּן הִתְחִיל.
 הַפִּיל הֵחֵל לְחָלָל בֶּחָלִיל, וּמִיָּד הִתְּפָעֵם מֵהַצְּלִיל.
@@ -84,6 +83,7 @@ export default function Page8() {
 
 כְּשֶׁרָאוּ אַבָּא פִּיל וְאִימָה פִּילָה, שֶׁבְּנָם צוֹהֵל בְּשִׂמְחָה וּבְרוֹן,
 הֵבִינוּ מִיָּד, שֶׁסּוֹף סוֹף מָצָא, אֶת הַכִּישָּׁרוֹן...`}
+        </div>
       </div>
 
       {/* ניווט */}
@@ -138,7 +138,7 @@ export default function Page8() {
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
             viewBox="0 0 24 24" fill="none" stroke="currentColor"
             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V12H9v8a2 2 0 0 1-2 2H3z" />
+            <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a 2 2 0 0 1-2-2V12H9v8a 2 2 0 0 1-2 2H3z" />
           </svg>
         </Link>
 
