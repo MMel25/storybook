@@ -17,7 +17,6 @@ export default function Page8() {
             accent-color: #ff9800;
           }
 
-          /* ✅ סרגל ניווט בדסקטופ */
           @media (min-width: 768px) {
             .nav-bar {
               max-width: 900px !important;
@@ -75,16 +74,7 @@ export default function Page8() {
       </div>
 
       {/* טקסט הסיפור */}
-      <div
-        style={{
-          fontSize: "1.4rem",
-          lineHeight: "2",
-          maxWidth: "820px",
-          margin: "0 auto 24px",
-          whiteSpace: "pre-line",
-          textAlign: "right", // ✅ יישור לימין
-        }}
-      >
+      <div className="story-text">
 {`פִּתְאוֹם הִגִּיעַ גִּיל, הַלֹּא הוּא הַמּוֹרֶה לְחָלִיל, וּמִיָּד עִם הַפִּילוֹן
 לְנַגֵּן הִתְחִיל.
 הַפִּיל הֵחֵל לְחָלָל בֶּחָלִיל, וּמִיָּד הִתְּפָעֵם מֵהַצְּלִיל.
@@ -102,12 +92,13 @@ export default function Page8() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          maxWidth: "500px", // יוחלף בדסקטופ
+          maxWidth: "500px",
           margin: "0 auto",
           marginTop: "24px",
           alignItems: "center",
         }}
       >
+        {/* הקודם */}
         <Link
           href="/page7"
           style={{
@@ -130,17 +121,17 @@ export default function Page8() {
           </svg>
         </Link>
 
+        {/* בית */}
         <Link
           href="/"
           style={{
             background: "#5c6bc0",
-            padding: "10px 16px",
-            borderRadius: "999px",
+            padding: "10px",
+            borderRadius: "50%",
             color: "#fff",
-            fontWeight: "bold",
             display: "flex",
             alignItems: "center",
-            gap: "8px",
+            justifyContent: "center",
             boxShadow: "0 3px 0 #3f51b5",
           }}
         >
@@ -149,9 +140,9 @@ export default function Page8() {
             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V12H9v8a2 2 0 0 1-2 2H3z" />
           </svg>
-          <span>לַדַּף הָרִאשׁוֹן</span>
         </Link>
 
+        {/* הבא */}
         <Link
           href="/page9"
           style={{
