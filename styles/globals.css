@@ -16,7 +16,7 @@ body {
   font-family: "Varela Round", "Heebo", sans-serif;
   color: var(--ink);
   text-align: center;
-  direction: rtl; /* ברירת מחדל עברית */
+  direction: rtl;
 }
 
 a {
@@ -49,29 +49,58 @@ a {
   margin: 0 auto;
 }
 
-/* מיכל משותף לנגן + טקסט */
+/* --- מיכל משותף לנגן + טקסט --- */
 .media-and-text {
-  max-width: 1050px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto 24px;
   padding: 0 16px;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.media-and-text .audio-wrapper {
+  width: 100%;
+  margin: 0 auto 16px;
+}
+
+.media-and-text audio {
+  width: 100%;
+  accent-color: #ff9800;
+}
+
+.media-and-text .story-text {
+  font-size: 1.4rem;
+  line-height: 2;
+  white-space: pre-line;
+  direction: rtl;
+  word-break: break-word;
+  overflow-wrap: break-word;
   box-sizing: border-box;
 }
 
-/* נגן */
+@media (min-width: 768px) {
+  .media-and-text .story-text {
+    max-width: 1000px;
+    line-height: 2.2;
+    padding-inline: 24px;
+  }
+}
+
+/* --- עיצוב נגן מדיה --- */
 .media {
   position: relative;
-  width: 100%;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(92, 107, 192, 0.18);
   background: #e3ecff;
-  margin: 0 auto 24px;
+  margin: 0 auto;
 }
 
 /* מובייל – יחס עומד */
 @media (max-width: 767px) {
   .media {
     aspect-ratio: 3 / 4;
+    width: 100%;
   }
 }
 
@@ -149,28 +178,5 @@ a {
   .cta svg {
     width: 18px;
     height: 18px;
-  }
-}
-
-/* ✅ טקסט הסיפור */
-.story-text {
-  font-size: 1.4rem;
-  line-height: 2;
-  max-width: 100%;
-  margin: 0 auto 24px;
-  white-space: pre-line;
-  text-align: right;
-  direction: rtl;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  padding-inline: 16px;
-  box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-  .story-text {
-    max-width: 1000px;
-    line-height: 2.2;
-    padding-inline: 24px;
   }
 }
