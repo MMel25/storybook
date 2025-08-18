@@ -6,7 +6,7 @@ export default function Home() {
   const siteUrl = "https://storybook-rose-two.vercel.app";
   const title = "הַפִּיל שֶׁאָהַב לְנַגֵּן";
   const description = "ספר ילדים מאת מָאוֹר מְלַמֵּד";
-  const imageUrl = "https://res.cloudinary.com/ddn1r6uzq/image/upload/v1755331027/cover_asju9w.png";
+  const imageUrl = "https://res.cloudinary.com/ddn1r6uzq/image/upload/v1755544137/cover_tsliqh.png";
 
   return (
     <>
