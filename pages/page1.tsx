@@ -1,8 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
 
 export default function Page1() {
+  const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    
+    const handleAudioEnd = () => {
+      // מעבר אוטומטי לעמוד הבא כאשר השמע מסתיים
+      setTimeout(() => {
+        router.push("/page2");
+      }, 1000); // המתנה של שנייה אחת לפני המעבר
+    };
+
+    if (audio) {
+      audio.addEventListener('ended', handleAudioEnd);
+      
+      // ניקוי event listener כשהקומפוננטה נהרסת
+      return () => {
+        audio.removeEventListener('ended', handleAudioEnd);
+      };
+    }
+  }, [router]);
+
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
       <Head>
@@ -51,6 +76,7 @@ export default function Page1() {
         {/* הנגן */}
         <div className="audio-wrapper">
           <audio
+            ref={audioRef}
             src="/audio/page1.wav"
             preload="auto"
             controls
