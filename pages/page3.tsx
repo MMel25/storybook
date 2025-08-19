@@ -1,8 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
 
 export default function Page3() {
+  const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    
+    const handleAudioEnd = () => {
+      // מעבר אוטומטי לעמוד הבא כאשר השמע מסתיים
+      setTimeout(() => {
+        router.push("/page4");
+      }, 1000); // המתנה של שנייה אחת לפני המעבר
+    };
+
+    if (audio) {
+      audio.addEventListener('ended', handleAudioEnd);
+      
+      // ניקוי event listener כשהקומפוננטה נהרסת
+      return () => {
+        audio.removeEventListener('ended', handleAudioEnd);
+      };
+    }
+  }, [router]);
+
   return (
     <main dir="rtl" style={{ textAlign: "center", padding: "16px" }}>
       <Head>
@@ -51,6 +76,7 @@ export default function Page3() {
         {/* הנגן */}
         <div className="audio-wrapper">
           <audio
+            ref={audioRef}
             src="/audio/page3.wav"
             preload="auto"
             controls
@@ -120,7 +146,7 @@ export default function Page3() {
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
               viewBox="0 0 24 24" fill="none" stroke="currentColor"
               strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V12H9v8a2 2 0 0 1-2 2H3z" />
+              <path d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2H3z" />
             </svg>
           </Link>
 
