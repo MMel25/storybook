@@ -126,28 +126,8 @@ export default function Page8() {
             </svg>
           </Link>
 
-          {/* הבא */}
-          <Link
-            href="/page9"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-              background: "#26a69a",
-              padding: "10px 14px",
-              borderRadius: "999px",
-              fontWeight: "bold",
-              color: "#fff",
-              boxShadow: "0 3px 0 #1b7f74",
-            }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            <span>הַבָּא</span>
-          </Link>
+          {/* אין כפתור "הבא" בעמוד האחרון */}
+          <div style={{ width: "86px", visibility: "hidden" }}></div>
         </div>
       </div>
     </main>
